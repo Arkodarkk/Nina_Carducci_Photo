@@ -154,7 +154,7 @@
         }
       });
       next =
-        imagesCollection[index] ||
+        imagesCollection[index - 1] ||//Ajout de la descente d'index pour afficher l'image suivante de la galerie
         imagesCollection[imagesCollection.length - 1];
       $(".lightboxImage").attr("src", $(next).attr("src"));
     },
@@ -192,7 +192,7 @@
           index = i;
         }
       });
-      next = imagesCollection[index] || imagesCollection[0];
+      next = imagesCollection[index + 1] || imagesCollection[0];//Ajout de la montée d'index pour afficher l'image suivante de la galerie
       $(".lightboxImage").attr("src", $(next).attr("src"));
     },
     createLightBox(gallery, lightboxId, navigation) {
@@ -217,6 +217,7 @@
                     </div>
                 </div>
             </div>`);
+      
     },
     showItemTags(gallery, position, tags) {
       var tagItems =
@@ -241,6 +242,16 @@
       }
       $(".active-tag").removeClass("active active-tag");
       $(this).addClass("active-tag");
+
+      // Mettre à jour l'apparence visuelle de la catégorie sélectionnée
+      $(".nav-link").css({
+        background: "",
+        color: ""
+      });
+      $(this).css({
+        background: "#BEB45A",
+        color: "white"
+      });
 
       var tag = $(this).data("images-toggle");
 

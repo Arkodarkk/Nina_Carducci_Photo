@@ -103,11 +103,17 @@ body {
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
 	color: #fff;
 	background-color: #BEB45A;
-	border-radius:0 ;
+	border-radius:5 ;
 }
 .nav-pills .nav-link {
 	color: #000
 }
+
+/* Modification du curseur au survol des catégories du Portfolio */
+.nav-pills .nav-link:hover {
+	cursor: pointer;
+}
+
 .item-column {
 	position: relative;
 	margin-bottom: 0 !important;
@@ -126,6 +132,11 @@ body {
 	object-fit: cover;
 	padding: .5em;
 }
+
+.gallery-item:hover {
+	cursor: pointer;
+ }
+
 .mg-prev, .mg-next {
 	width: 30px;
 	height: 30px;
