@@ -249,7 +249,7 @@
         color: ""
       });
       $(this).css({
-        background: "#BEB45A",
+        background: "#695e00",
         color: "white"
       });
 
